@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 
 require "digest"
-require "byebug"
 
 if ARGV.length < 2 || ARGV.any?(&:empty?)
     puts <<~TEXT

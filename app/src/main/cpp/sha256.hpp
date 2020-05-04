@@ -1,7 +1,3 @@
-//
-// Created by Cyrille Courtière on 2020-04-29.
-//
-
 #ifndef SHA256_H
 #define SHA256_H
 #include <string>

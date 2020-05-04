@@ -1,6 +1,6 @@
 #include <cstring>
 #include <fstream>
-#include "sha256.h"
+#include "sha256.hpp"
 
 /*
  * Updated to C++, zedwood.com 2012
