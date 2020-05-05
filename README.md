@@ -9,6 +9,8 @@ It uses a combination of obfuscation techniques to do so :
 - obfuscated secret is stored in a NDK binary as an hexadecimal array, so it is really hard to spot / put together from a disassembly,
 - the obfuscating string is not persisted in the binary to force runtime evaluation (ie : prevent the compiler from disclosing the secret by optimizing the de-obfuscation logic).
 
+⚠️ Nothing on the client-side is unbreakable. So generally speaking, **keeping a secret in a mobile package is not a smart idea**. But when you absolutely need to, this is the best method we have found to hide it.
+
 # Hide your own secret
 
 Here are the steps to follow to hide your own secret.
@@ -50,7 +52,7 @@ Append the C++ decoding function containing the obfuscated secret to `app/src/ma
 
 ## 3 - Display the secret at runtime
 
-In `app/src/main/java/com/klaxit/HiddenSecrets/MainActivity.kt`, you will just need to add the following line to 
+In `app/src/main/java/com/klaxit/HiddenSecrets/MainActivity.kt`, you will just need to add the following line to
 display your secret :
 
 ```kotlin
@@ -81,4 +83,3 @@ See the list of [contributors](https://github.com/klaxit/HiddenSecrets/contribut
 # License
 
 Please see LICENSE
-
