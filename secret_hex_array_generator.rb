@@ -32,8 +32,8 @@ end
 
 
 puts <<~TEXT
-    ### KEY ###
-    #{secret_key}
+    ### SECRET ###
+    #{secret}
 
     ### PACKAGE NAME ###
     #{package_name}
