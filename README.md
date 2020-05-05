@@ -1,3 +1,5 @@
+# Deeply hide secrets on Android
+
 Minimal project to demonstrate a method to **deeply hide a secret on Android**.
 
 It is highly inspired from https://www.splinter.com.au/2014/09/16/storing-secret-keys/
@@ -59,6 +61,19 @@ display your secret :
 
 Build & run yhe project from Android Studio... Et voilà!
 
+# Challenge
+
+We have built a small challenge in this project to test the robustness of our implementation. You will
+find in `challenge/` an APK containing another hidden secret.
+
+Ping us on our "dev" email address if you happen to find it 😋
+
+## Useful tools
+
+Disassemblers:
+- https://github.com/radareorg/cutter
+- https://binary.ninja/
+
 # Authors
 
 See the list of [contributors](https://github.com/klaxit/HiddenSecrets/contributors) who participated in this project.
@@ -67,8 +82,3 @@ See the list of [contributors](https://github.com/klaxit/HiddenSecrets/contribut
 
 Please see LICENSE
 
-# Useful tools
-
-Disassemblers : 
-- https://github.com/radareorg/cutter
-- https://binary.ninja/
