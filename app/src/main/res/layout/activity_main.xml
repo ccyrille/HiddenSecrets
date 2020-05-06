@@ -8,7 +8,7 @@
         tools:context=".MainActivity">
 
     <TextView
-            android:id="@+id/content"
+            android:id="@+id/text_content"
             android:layout_width="wrap_content"
             android:layout_height="600dp"
             android:text="Hello World!"
