@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.support.annotation.RequiresApi
 import kotlinx.android.synthetic.main.activity_main.*
 
+/**
+ * Example Activity to show how to access to your well hidden secret
+ */
 class MainActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.P)

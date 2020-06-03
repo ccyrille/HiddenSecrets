@@ -23,20 +23,17 @@ We implemented a Ruby utility to generate the hexadecimal array obfuscating the 
     secret_hex_array_generator.rb <SECRET_TO_BE_HIDDEN> <ANDROID_APP_PACKAGE_NAME>
 ```
 
-In this project `ANDROID_APP_PACKAGE_NAME` will always be `com.klaxit.HiddenSecrets`.
+## 2 - Persist the secret in your code
 
-## 2 - Persist the secret
+### 2.1 - Copy required files in your project
+Copy the `Secrets.kt` file in your project.
+Copy the `cpp` folder in your project, in the `main` directory (next to the `java` folder).
 
-Append the JAVA wrapping function to `app/src/main/java/com/klaxit/HiddenSecrets/Secrets.kt`, for example :
-
-```kotlin
-    class Secrets{
-        //...
-        external fun getMySecret(packageName: String): String
-    }
-```
-
-Append the C++ decoding function containing the obfuscated secret to `app/src/main/cpp/secrets.cpp` :
+### 2.2 - Edit the decoding function in `app/src/main/cpp/secrets.cpp`
+#### Edit the function name
+In the function name `com_klaxit_HiddenSecrets` must be replaced by the package name where your placed the file `Secrets.kt` in your project.
+#### Place your own generated secret array
+Replace `<OBFUSCATED_SECRET_ARRAY_GOES_HERE>` by the generate array from the step 1
 
 ```cpp
     extern "C"
@@ -50,18 +47,29 @@ Append the C++ decoding function containing the obfuscated secret to `app/src/ma
     }
 ```
 
-## 3 - Display the secret at runtime
+## 3 - Setup gradle to be able to build the added C++ code
 
-In `app/src/main/java/com/klaxit/HiddenSecrets/MainActivity.kt`, you will just need to add the following line to
-display your secret :
+In your gradle add thoses line at the same level as `buildTypes` :
+
+```
+externalNativeBuild {
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+        }
+    }
+    ```
+
+## 4 - Display the secret at runtime
+
+In any class you can now get your secret key, for example to display it in a textView :
 
 ```kotlin
-    textView.setText(Secrets().getMySecret("com.klaxit.HiddenSecrets"))
+    textView.setText(Secrets().getMySecret(<ANDROID_APP_PACKAGE_NAME>))
 ```
 
-## 4 - Build & run your app
+## 5 - Build & run your app
 
-Build & run yhe project from Android Studio... Et voilà!
+Build & run your project from Android Studio... Et voilà!
 
 # Challenge
 
