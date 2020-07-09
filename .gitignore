@@ -12,3 +12,4 @@
 /captures
 .externalNativeBuild
 .byebug_history
+buildSrc/build
