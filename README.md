@@ -1,3 +1,9 @@
+# TL;DR
+
+⚠️ Not maintained ⚠️ 
+
+This gave birth to [Hidden Secret Gradle Plugin](https://github.com/klaxit/hidden-secrets-gradle-plugin)
+
 # Deeply hide secrets on Android
 
 Minimal project to demonstrate a method to **deeply hide a secret on Android**.
